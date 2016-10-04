@@ -7,6 +7,50 @@ import java.text.DateFormat;
 
 public class User{
 
+  // private int id;
+  private String name;
+  private int playerNum;
+  private boolean loser;
 
-  
+  //i think it's best to relate bases this way, they wouldn't go on a database (or so i think...)
+  private List<Base> bases = new ArrayList<Base>();
+
+
+
+  public User(String _name, int _playerNum, int _numberOfBases){
+    name = _name;
+    playerNum = _playerNum;
+    loser = false;
+  }
+
+  public boolean isLoser(){
+    return loser;
+  }
+
+  public void addBase(int _length){
+    Base base = new Base(_length, playerNum);
+    bases.add(base);
+  }
+
+  public String getName(){
+    return name;
+  }
+
+  public List<Base> getBases(){
+    return bases;
+  }
+
+  public void hitPlayer(int _baseHit, int _nodeHit){
+    bases.get(_baseHit+1).hitNode(_nodeHit);
+    boolean allDestroyed = true;
+    for(Base base: bases){
+      if(base.isDestroyed() == false){
+        allDestroyed = false;
+      }
+    }
+    if (allDestroyed == true){
+      loser = true;
+    }
+  }
+
 }
