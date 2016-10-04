@@ -27,9 +27,20 @@ public class User{
     return loser;
   }
 
+  public void setLoser(){
+    loser = true;
+  }
+
+
   public void addBase(int _length){
     Base base = new Base(_length, playerNum);
     bases.add(base);
+  }
+
+  public void addFiveBasesOfOne(){
+    for (int i = 0; i < 5; i++) {
+      this.addBase(1);
+    }
   }
 
   public String getName(){
@@ -38,19 +49,6 @@ public class User{
 
   public List<Base> getBases(){
     return bases;
-  }
-
-  public void hitPlayer(int _baseHit, int _nodeHit){
-    bases.get(_baseHit+1).hitNode(_nodeHit);
-    boolean allDestroyed = true;
-    for(Base base: bases){
-      if(base.isDestroyed() == false){
-        allDestroyed = false;
-      }
-    }
-    if (allDestroyed == true){
-      loser = true;
-    }
   }
 
 }
