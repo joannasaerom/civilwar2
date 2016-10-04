@@ -29,7 +29,7 @@ public class Base{
   //this method will implement the hit on the correct node and will also return a boolean regarding whether the base has been destroyed or not.
   public void hitNode(int _nodeHit){
     //there's an error here, is there a better way to assign a new value to a list member than in the next line?
-    nodes.get((_nodeHit-1)) = true;
+    nodes.set((_nodeHit-1), true);
     if(nodes.contains(false)){
       destroyed = false;
     } else{
