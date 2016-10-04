@@ -17,11 +17,11 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // get("/one-player", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("template", "templates/index.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+    get("/one-player", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/one-player.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
     get("/two-player", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -29,16 +29,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // post("/one-player/start", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   String player1Name = request.queryParams("name1");
-    //   String player2Name = request.queryParams("name2");
-    //   Game game = new Game(player1Name, player2Name, 5);
-    //   model.put("template", "templates/one-player-gameplay.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
-
-    post("/two-player/start", (request, response) -> {
+    post("/play/start", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String player1Name = request.queryParams("name1");
       String player2Name = request.queryParams("name2");
@@ -53,30 +44,11 @@ public class App {
       model.put("game", game);
       model.put("player1", player1);
       model.put("player2", player2);
-      model.put("template", "templates/two-player-gameplay.vtl");
+      model.put("template", "templates/gameplay.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // post("/one-player/:turns", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   Game game = request.session().attribute("game");
-    //   User player1 = request.session().attribute("player1");
-    //   User player2 = request.session().attribute("player2");
-    //   game.changeTurns();
-    //   model.put("game", game);
-    //   model.put("player1", player1);
-    //   model.put("player2", player2);
-    //   if (game.isGameOver()==true){
-    //     game.saveVictor();
-    //     model.put("template", "templates/game-over.vtl");
-    //   } else{
-    //     model.put("template", "templates/one-player-gameplay.vtl");
-    //   }
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
-
-
-    post("/two-player/:turns", (request, response) -> {
+    post("/play/:turns", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Game game = request.session().attribute("game");
       User player1 = request.session().attribute("player1");
@@ -93,11 +65,10 @@ public class App {
         game.saveVictor();
         model.put("template", "templates/game-over.vtl");
       } else{
-        model.put("template", "templates/two-player-gameplay.vtl");
+        model.put("template", "templates/gameplay.vtl");
       }
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-
 
   }
 }

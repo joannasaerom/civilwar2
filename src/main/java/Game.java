@@ -7,7 +7,7 @@ import java.text.DateFormat;
 
 public class Game{
 
-  private int turns = 0;
+  private int turns = 1;
   private User player1;
   private User player2;
   private boolean gameOver = false;
@@ -19,7 +19,7 @@ public class Game{
   }
 
   public int getTurns(){
-    return turns;
+    return (turns + 1);
   }
 
   public User getPlayer1(){
@@ -76,7 +76,7 @@ public class Game{
   public void attackPlayer(User _playerHit, int _baseHit, int _nodeHit){
     if(_baseHit==0 || _nodeHit == 0){
     } else{
-      _playerHit.getBases().get(_baseHit+1).hitNode(_nodeHit+1);
+      _playerHit.getBases().get(_baseHit-1).hitNode(_nodeHit);
       boolean allDestroyed = true;
       for(Base base: _playerHit.getBases()){
         if(base.isDestroyed() == false){
