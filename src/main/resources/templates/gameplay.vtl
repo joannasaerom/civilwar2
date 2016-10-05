@@ -2,19 +2,11 @@
 
 <form action="/play/$game.getPlayerOfTurn().getName()/$game.getTurns()" method="post">
 
-#if($game.getPlayerOfTurn().getPlayerNum() == 1)
+  <span class ="previousTargetsHit" value="$game.getPlayerOfTurn().getTargetsHit()"></span>
+  <span class ="previousTargetsMissed" value="$game.getPlayerOfTurn().getTargetsMissed()"></span>
 
   <div id="target">
-
   </div>
-
-#elseif($game.getPlayerOfTurn().getPlayerNum() == 2)
-
-<div id="target">
-
-</div>
-
-#end
 
   <button type="submit" class="btn-danger">Attack!</button>
 </form>
