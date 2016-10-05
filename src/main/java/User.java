@@ -11,6 +11,9 @@ public class User{
   private String name;
   private int playerNum;
   private boolean loser;
+  //these empty strings may add an undefined value to arrays unnecessarily, remember to troubleshoot!
+  private String targetsMissed;
+  private String targetsHit;
 
   //i think it's best to relate bases this way, they wouldn't go on a database (or so i think...)
   private List<Base> bases = new ArrayList<Base>();
@@ -19,6 +22,7 @@ public class User{
 
   public User(String _name, int _playerNum, int _numberOfBases){
     name = _name;
+    //playerNum can probably be taken out
     playerNum = _playerNum;
     loser = false;
   }
@@ -31,15 +35,15 @@ public class User{
     loser = true;
   }
 
-
-  public void addBase(int _length){
-    Base base = new Base(_length, playerNum);
+  public void addBase(String _location){
+    Base base = new Base(_location, playerNum);
     bases.add(base);
   }
 
-  public void addFiveBasesOfOne(){
-    for (int i = 0; i < 5; i++) {
-      this.addBase(1);
+  public void addBases(String _allBaseLocations){
+    String[] allBases = _allBaseLocations.split("");
+    for(String baseName : allBases){
+      this.addBase(baseName);
     }
   }
 
@@ -47,8 +51,42 @@ public class User{
     return name;
   }
 
+  public int getPlayerNum(){
+    return playerNum;
+  }
+
   public List<Base> getBases(){
     return bases;
   }
+
+  public String getTargetsHit(){
+    return targetsHit;
+  }
+
+  public String getTargetsMissed(){
+    return targetsMissed;
+  }
+
+  public void addToTargetsHit(String _targetHit){
+    targetsHit += (_targetHit + ",");
+    // List<String> targetsHitArrayList = new ArrayList<String>();
+    // String [] targetsHitArray = targetsHit.split(",");
+    // for(String target : targetsHitArray){
+    //   targetsHitArrayList.add(target);
+    // }
+    // targetsHit = targetsHitArrayList.join(",");
+  }
+
+  public void addToTargetsMissed(String _targetMissed){
+    targetsMissed += (_targetMissed + ",");
+    //
+    // List<String> targetsMissedArrayList = new ArrayList<String>();
+    // String [] targetsMissedArray = targetsMissed.split(",");
+    // for(String target : targetsMissedArray){
+    //   targetsMissedArrayList.add(target);
+    // }
+    // targetsMissed = targetsMissedArrayList.join(",");
+  }
+
 
 }

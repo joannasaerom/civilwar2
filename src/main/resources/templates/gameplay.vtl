@@ -1,11 +1,11 @@
 <h2>time for war!</h2>
 
+<form action="/play/$game.getPlayerOfTurn().getName()/$game.getTurns()" method="post">
 
+  <span class ="previousTargetsHit" value="$game.getPlayerOfTurn().getTargetsHit()"></span>
+  <span class ="previousTargetsMissed" value="$game.getPlayerOfTurn().getTargetsMissed()"></span>
 
-<form action="/play/$game.getTurns()" method="post">
-
-  <div class="attack-result">
-
+  <div id="target">
   </div>
 
   <button type="submit" class="btn-danger">Attack!</button>

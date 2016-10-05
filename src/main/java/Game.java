@@ -12,14 +12,32 @@ public class Game{
   private User player2;
   private boolean gameOver = false;
   private User victor;
+  private boolean isTwoPlayer;
 
-  public Game(String _player1Name,String  _player2Name,int  _numberOfBases) {
+  public Game(String _player1Name,String  _player2Name, int  _numberOfBases, boolean _isTwoPlayer) {
     player1 = new User(_player1Name, 1, _numberOfBases);
     player2 = new User(_player2Name, 2, _numberOfBases);
+    isTwoPlayer = _isTwoPlayer;
   }
 
   public int getTurns(){
-    return (turns + 1);
+    return turns;
+  }
+
+  public User getPlayerOfTurn(){
+    if (turns%2==0){
+      return player2;
+    } else {
+      return player1;
+    }
+  }
+
+  public User getNonTurnPlayer(){
+    if (turns%2==0){
+      return player1;
+    } else {
+      return player2;
+    }
   }
 
   public User getPlayer1(){
@@ -48,6 +66,10 @@ public class Game{
     return gameOver;
   }
 
+  public boolean isTwoPlayer(){
+    return isTwoPlayer;
+  }
+
   public void changeTurns(){
     if (player1.isLoser() == true){
       victor = player2;
@@ -73,21 +95,26 @@ public class Game{
     }
   }
 
-  public void attackPlayer(User _playerHit, int _baseHit, int _nodeHit){
-    if(_baseHit==0 || _nodeHit == 0){
-    } else{
-      _playerHit.getBases().get(_baseHit-1).hitNode(_nodeHit);
-      boolean allDestroyed = true;
-      for(Base base: _playerHit.getBases()){
-        if(base.isDestroyed() == false){
-          allDestroyed = false;
-        }
-      }
-      if (allDestroyed == true){
-        _playerHit.setLoser();
+//would be cool to throw an exception if country has already been selected (although front end should prevent that possibility)
+  public void attackPlayer(String _targetLocation){
+    for(Base base : this.getNonTurnPlayer().getBases()){
+      if(!_targetLocation.equals(base.getLocation())){
+        this.changeTurns();
+        this.getPlayerOfTurn().addToTargetsMissed(_targetLocation);
+      } else{
+        base.setDestroyed();
+        this.getPlayerOfTurn().addToTargetsHit(_targetLocation);
       }
     }
+    boolean allDestroyed = true;
+    for(Base base: this.getNonTurnPlayer().getBases()){
+      if(base.isDestroyed() == false){
+        allDestroyed = false;
+      }
+    }
+    if (allDestroyed == true){
+      this.getNonTurnPlayer().setLoser();
+    }
   }
-
 
 }
