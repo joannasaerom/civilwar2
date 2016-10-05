@@ -19,14 +19,14 @@ public class App {
 
     get("/one-player", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      request.session()attribute("two-player-mode", false);
+      request.session().attribute("two-player-mode", false);
       model.put("template", "templates/one-player.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     get("/two-player", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      request.session()attribute("two-player-mode", true);
+      request.session().attribute("two-player-mode", true);
       model.put("template", "templates/two-player.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -36,10 +36,10 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       String player1Name = request.queryParams("name1");
       String player2Name = request.queryParams("name2");
-      Game game = new Game(player1Name, player2Name, 5, request.session()attribute("two-player-mode"));
+      Game game = new Game(player1Name, player2Name, 5, request.session().attribute("two-player-mode"));
       request.session().attribute("game", game);
-      request.session().attribute("player1", player1);
-      request.session().attribute("player2", player2);
+      request.session().attribute("player1", game.getPlayer1());
+      request.session().attribute("player2", game.getPlayer2());
       model.put("template", "templates/select-bases.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -60,7 +60,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Game game = request.session().attribute("game");
       String target = request.queryParams("target");
-      game.attackPlayer(game.getNonTurnPlayer(), target);
+      game.attackPlayer(target);
       model.put("game", game);
       if (game.isGameOver()==true){
         game.saveVictor();

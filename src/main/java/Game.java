@@ -100,10 +100,10 @@ public class Game{
     for(Base base : this.getNonTurnPlayer().getBases()){
       if(!_targetLocation.equals(base.getLocation())){
         this.changeTurns();
-        getTurnPlayer().addToTargetsMissed()
+        this.getPlayerOfTurn().addToTargetsMissed(_targetLocation);
       } else{
         base.setDestroyed();
-        getTurnPlayer().addToTargetsHit()
+        this.getPlayerOfTurn().addToTargetsHit(_targetLocation);
       }
     }
     boolean allDestroyed = true;
@@ -113,8 +113,8 @@ public class Game{
       }
     }
     if (allDestroyed == true){
-      _playerHit.setLoser();
+      this.getNonTurnPlayer().setLoser();
     }
   }
-  
+
 }

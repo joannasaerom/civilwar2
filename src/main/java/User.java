@@ -12,8 +12,8 @@ public class User{
   private int playerNum;
   private boolean loser;
   //these empty strings may add an undefined value to arrays unnecessarily, remember to troubleshoot!
-  private String targetsMissed = "";
-  private String targetsHit = "";
+  private String targetsMissed;
+  private String targetsHit;
 
   //i think it's best to relate bases this way, they wouldn't go on a database (or so i think...)
   private List<Base> bases = new ArrayList<Base>();
@@ -42,8 +42,8 @@ public class User{
 
   public void addBases(String _allBaseLocations){
     String[] allBases = _allBaseLocations.split("");
-    for(_base : allBases){
-      this.addBase(_base)
+    for(String baseName : allBases){
+      this.addBase(baseName);
     }
   }
 
@@ -67,16 +67,25 @@ public class User{
     return targetsMissed;
   }
 
-  public void addToTargetsHit(String _targetsHit){
-    String [] targetsHitArray = targetsHit.split(",");
-    targetsHitArray.add(_targetsHit);
-    targetsHit = targetsHitArray.join(",");
+  public void addToTargetsHit(String _targetHit){
+    targetsHit += (_targetHit + ",");
+    // List<String> targetsHitArrayList = new ArrayList<String>();
+    // String [] targetsHitArray = targetsHit.split(",");
+    // for(String target : targetsHitArray){
+    //   targetsHitArrayList.add(target);
+    // }
+    // targetsHit = targetsHitArrayList.join(",");
   }
 
-  public void addToTargetsHit(String _targetsMissed){
-    String [] targetsMissedArray = targetsMissed.split(",");
-    targetsMissedArray.add(_targetsMissed);
-    targetsMissed = targetsMissedArray.join(",");
+  public void addToTargetsMissed(String _targetMissed){
+    targetsMissed += (_targetMissed + ",");
+    //
+    // List<String> targetsMissedArrayList = new ArrayList<String>();
+    // String [] targetsMissedArray = targetsMissed.split(",");
+    // for(String target : targetsMissedArray){
+    //   targetsMissedArrayList.add(target);
+    // }
+    // targetsMissed = targetsMissedArrayList.join(",");
   }
 
 
