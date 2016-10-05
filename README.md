@@ -24,7 +24,7 @@ CREATE TABLE hall_of_fame (id serial PRIMARY KEY, name varchar, turns int, momen
 CREATE DATABASE hall_of_fame_test WITH TEMPLATE ww3;
 
 In bash:
-$ psql ww3 < media.sql
+$ psql hall_of_fame < media.sql
 
 ## Known Issues
 
