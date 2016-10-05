@@ -19,48 +19,49 @@ public class App {
 
     get("/one-player", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+      request.session()attribute("two-player-mode", false);
       model.put("template", "templates/one-player.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     get("/two-player", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+      request.session()attribute("two-player-mode", true);
       model.put("template", "templates/two-player.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/play/start", (request, response) -> {
+
+    post("/select-bases", (request, response) ->{
       Map<String, Object> model = new HashMap<String, Object>();
       String player1Name = request.queryParams("name1");
       String player2Name = request.queryParams("name2");
-      Game game = new Game(player1Name, player2Name, 5);
-      User player1 = game.getPlayer1();
-      User player2 = game.getPlayer2();
-      player1.addFiveBasesOfOne();
-      player2.addFiveBasesOfOne();
+      Game game = new Game(player1Name, player2Name, 5, request.session()attribute("two-player-mode"));
       request.session().attribute("game", game);
       request.session().attribute("player1", player1);
       request.session().attribute("player2", player2);
+      model.put("template", "templates/select-bases.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/play/:playerOfTurn/start", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Game game = request.session().attribute("game");
+      String player1Bases = request.queryParams("player1-bases");
+      String player2Bases = request.queryParams("player2-bases");
+      game.getPlayer1().addBases(player1Bases);
+      game.getPlayer2().addBases(player2Bases);
       model.put("game", game);
-      model.put("player1", player1);
-      model.put("player2", player2);
       model.put("template", "templates/gameplay.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/play/:turns", (request, response) -> {
+    post("/play/:playerOfTurn/:turns", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Game game = request.session().attribute("game");
-      User player1 = request.session().attribute("player1");
-      User player2 = request.session().attribute("player2");
-      User playerHit = game.getHitPlayer(Integer.parseInt(request.queryParams("playerHit")));
-      int baseHit = Integer.parseInt(request.queryParams("baseHit"));
-      int nodeHit = Integer.parseInt(request.queryParams("nodeHit"));
-      game.attackPlayer(playerHit, baseHit, nodeHit);
-      game.changeTurns();
+      String target = request.queryParams("target");
+      game.attackPlayer(game.getNonTurnPlayer(), target);
       model.put("game", game);
-      model.put("player1", player1);
-      model.put("player2", player2);
       if (game.isGameOver()==true){
         game.saveVictor();
         model.put("template", "templates/game-over.vtl");
