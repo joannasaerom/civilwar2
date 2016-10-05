@@ -26,6 +26,26 @@ public class Game{
     return turns;
   }
 
+  public User getPlayer1(){
+    return player1;
+  }
+
+  public User getPlayer2(){
+    return player2;
+  }
+
+  public User getVictor(){
+    return victor;
+  }
+
+  public boolean isGameOver(){
+    return gameOver;
+  }
+
+  public boolean isTwoPlayer(){
+    return isTwoPlayer;
+  }
+
   public User getPlayerOfTurn(){
     if (turns%2==0){
       return player2;
@@ -40,36 +60,6 @@ public class Game{
     } else {
       return player2;
     }
-  }
-
-  public User getPlayer1(){
-    return player1;
-  }
-
-  public User getPlayer2(){
-    return player2;
-  }
-
-  // public User getHitPlayer(int _playerNum){
-  //   if(_playerNum == 1){
-  //     return this.getPlayer1();
-  //   } else if (_playerNum == 2){
-  //     return this.getPlayer2();
-  //   } else{
-  //     throw new IllegalArgumentException("you must enter either 1 or 2 as an argument");
-  //   }
-  // }
-
-  public User getVictor(){
-    return victor;
-  }
-
-  public boolean isGameOver(){
-    return gameOver;
-  }
-
-  public boolean isTwoPlayer(){
-    return isTwoPlayer;
   }
 
   public void changeTurns(){
@@ -120,7 +110,5 @@ public class Game{
         .executeUpdate();
     }
   }
-
-
 
 }
