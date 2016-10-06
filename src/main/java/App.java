@@ -63,6 +63,8 @@ public class App {
       model.put("game", game);
       if (game.isGameOver()==true){
         game.saveVictor();
+        game.getHallOfFame();
+        model.put("hall-of-fame", HallOfFame.class);
         model.put("template", "templates/game-over.vtl");
       } else{
         model.put("template", "templates/gameplay.vtl");

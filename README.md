@@ -19,9 +19,12 @@ Thirst for nuclear warfare has finally overwhelmed humanity's best judgment, and
 ### Database Commands
 
 In PSQL:
+
 CREATE DATABASE hall_of_fame;
-CREATE TABLE hall_of_fame (id serial PRIMARY KEY, name varchar, turns int, moment timestamp);
-CREATE DATABASE hall_of_fame_test WITH TEMPLATE ww3;
+
+CREATE TABLE victors (id serial PRIMARY KEY, name varchar, turns int, moment timestamp);
+
+CREATE DATABASE hall_of_fame_test WITH TEMPLATE hall_of_fame;
 
 In bash:
 $ psql hall_of_fame < media.sql
