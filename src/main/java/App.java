@@ -31,25 +31,34 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/select-bases", (request, response) ->{
+    post("/select-bases-p1", (request, response) ->{
       Map<String, Object> model = new HashMap<String, Object>();
       String player1Name = request.queryParams("name1");
       String player2Name = request.queryParams("name2");
       Game game = new Game(player1Name, player2Name, 5, request.session().attribute("two-player-mode"));
       request.session().attribute("game", game);
-      request.session().attribute("player1", game.getPlayer1());
-      request.session().attribute("player2", game.getPlayer2());
-      model.put("template", "templates/select-bases.vtl");
+      model.put("game", game);
+      model.put("template", "templates/select-bases-p1.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/select-bases-p2", (request, response) ->{
+      Map<String, Object> model = new HashMap<String, Object>();
+      Game game = request.session().attribute("game");
+      String player1Bases = request.queryParams("player1-bases");
+      game.getPlayer1().addBases(player1Bases);
+      request.session().attribute("game", game);
+      model.put("game", game);
+      model.put("template", "templates/select-bases-p2.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/play/:playerOfTurn/start", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Game game = request.session().attribute("game");
-      String player1Bases = request.queryParams("player1-bases");
       String player2Bases = request.queryParams("player2-bases");
-      game.getPlayer1().addBases(player1Bases);
       game.getPlayer2().addBases(player2Bases);
+      request.session().attribute("game", game);
       model.put("game", game);
       model.put("template", "templates/gameplay.vtl");
       return new ModelAndView(model, layout);
@@ -60,6 +69,7 @@ public class App {
       Game game = request.session().attribute("game");
       String target = request.queryParams("target");
       game.attackPlayer(target);
+      request.session().attribute("game", game);
       model.put("game", game);
       if (game.isGameOver()==true){
         game.saveVictor();

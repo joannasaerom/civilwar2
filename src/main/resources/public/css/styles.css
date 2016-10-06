@@ -15,3 +15,7 @@ h1{
 #sample {
   margin: 0 auto;
 }
+
+#player2-select-screen{
+  display: none;
+}
