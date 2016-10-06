@@ -88,10 +88,18 @@ h1{
 #player2-select-screen{
   display: none;
 }
+
 strong{
   text-decoration: underline;
 }
 .baseButton{
   width: 160px;
   text-align: center;
+
+
+.disable-button{
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+
 }

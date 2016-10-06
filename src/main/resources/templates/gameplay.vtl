@@ -1,12 +1,15 @@
-<h2>$game.getPlayerOfTurn()'s Turn:</h2>
+
+<h2>$game.getPlayerOfTurn().getName()'s Turn:</h2>
 <div id = "sample" style = "width:900px; height:600px;"></div>
+
 <form action="/play/$game.getPlayerOfTurn().getName()/$game.getTurns()" method="post">
 
-  <span class ="previousTargetsHit" value="$game.getPlayerOfTurn().getTargetsHit()"></span>
-  <span class ="previousTargetsMissed" value="$game.getPlayerOfTurn().getTargetsMissed()"></span>
+  <span id ="previousTargetsHit" value="$game.getPlayerOfTurn().getTargetsHit()"></span>
+  <span id ="previousTargetsMissed" value="$game.getPlayerOfTurn().getTargetsMissed()"></span>
 
   <div id="target">
   </div>
 
-  <button type="submit" class="btn-default">Attack!</button>
+  <div id="attack-select" class="btn btn-danger">Load Missiles</div>
+  <button id="attack-finalize" type="submit" class="btn btn-danger disable-button">Attack</button>
 </form>

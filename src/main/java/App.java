@@ -10,6 +10,7 @@ public class App {
   public static void main(String[] args) {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
+    String layoutGameplay = "templates/layout-gameplay.vtl";
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -61,7 +62,7 @@ public class App {
       request.session().attribute("game", game);
       model.put("game", game);
       model.put("template", "templates/gameplay.vtl");
-      return new ModelAndView(model, layout);
+      return new ModelAndView(model, layoutGameplay);
     }, new VelocityTemplateEngine());
 
     post("/play/:playerOfTurn/:turns", (request, response) -> {
@@ -73,14 +74,13 @@ public class App {
       model.put("game", game);
       if (game.isGameOver()==true){
         game.saveVictor();
-        // game.getHallOfFame();
         model.put("hall-of-fame", HallOfFame.class);
         model.put("hall-of-fame", HallOfFame.all());
         model.put("template", "templates/game-over.vtl");
       } else{
         model.put("template", "templates/gameplay.vtl");
       }
-      return new ModelAndView(model, layout);
+      return new ModelAndView(model, layoutGameplay);
     }, new VelocityTemplateEngine());
 
   }
