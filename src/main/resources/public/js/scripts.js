@@ -29,6 +29,7 @@ $(document).ready(function() {
     var map = new google.maps.Map(document.getElementById('sample'), {
       center: {lat: 37.09024, lng: -95.712891},
       zoom:4,
+      disableDefaultUI: true,
       mapTypeId:google.maps.MapTypeId.ROADMAP
       styles: [
               {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -75,6 +76,8 @@ $(document).ready(function() {
               }
             ]
           });
+
+          map.setOptions({draggable: false, disableDoubleClickZoom: true});
 
     function States(name, polygon) {
       this.name = name;
