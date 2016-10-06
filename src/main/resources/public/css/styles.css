@@ -1,8 +1,17 @@
 body{
-  background-color: black;
-  color: white;
+  background-color: #0D1723;
+  color: #ffeddb;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 body input {
   color:red;
+}
+h1{
+  font-family: 'Special Elite', cursive;
+  font-size: 5em;
+  text-align: center;
+}
+#sample {
+  margin: 0 auto;
 }
