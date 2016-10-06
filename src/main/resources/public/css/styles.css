@@ -1,11 +1,10 @@
 body{
   background-color: #0D1723;
-  color: #ffeddb;
+  color: #8C6528;
   font-family: 'Rokkitt', serif;
 }
-
-body input {
-  color:red;
+input{
+  color: #0D1723;
 }
 h1{
   font-family: 'Kumar One', cursive;
@@ -18,4 +17,14 @@ h1{
 .storyLine {
   width: 800px;
   margin: 0 auto;
+}
+.btn-default {
+  background-color: #182534;
+  border: 2px solid #203246;
+  color: #8C6528;
+}
+.btn-default:hover, .btn-default:active, .btn-default:visited {
+  background-color: #283e57;
+  border: 2px solid #203246;
+  color: #8C6528;
 }
