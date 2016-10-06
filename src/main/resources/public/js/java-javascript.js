@@ -1,7 +1,12 @@
 var selectedStateNames = [];
 var selectedStatesString;
+var target;
+var previousTargetsHit=[];
+var previousTargetsMissed=[];
 
 $(document).ready(function() {
+
+// select bases page functions
 
   $("#player1-add-bases-button").click(function(){
     selectedStateNames=[];
@@ -34,5 +39,26 @@ $(document).ready(function() {
       $("#player2-button").removeClass("disable-button");
     }
   });
+
+  // attack stage operations
+
+  var previousTargetsHitString = $("#previousTargetsHit").val();
+  previousTargetsHit = previousTargetsHitString.split(",");
+
+  var previousTargetsMissedString = $("#previousTargetsMissed").val();
+  previousTargetsMissed = previousTargetsMissedString.split(",");
+
+  $("#attack-select").click(function(){
+    target = "";
+    target = targetState;
+    $("#target").html("<input name='target' class='hide' value='" + target + "'>");
+    if(target.length > 0) {
+      $("#attack-finalize").removeClass("disable-button");
+    }
+  });
+
+
+
+
 
 });
