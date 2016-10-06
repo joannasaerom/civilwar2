@@ -1,17 +1,21 @@
 body{
   background-color: #0D1723;
   color: #ffeddb;
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Rokkitt', serif;
 }
 
 body input {
   color:red;
 }
 h1{
-  font-family: 'Special Elite', cursive;
-  font-size: 5em;
+  font-family: 'Kumar One', cursive;
+  font-size: 6em;
   text-align: center;
 }
 #sample {
+  margin: 0 auto;
+}
+.storyLine {
+  width: 800px;
   margin: 0 auto;
 }
