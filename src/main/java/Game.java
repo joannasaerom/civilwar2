@@ -14,7 +14,7 @@ public class Game{
   private User victor;
   private boolean isTwoPlayer;
 
-  public Game(String _player1Name,String  _player2Name, int  _numberOfBases, boolean _isTwoPlayer) {
+  public Game(String _player1Name, String  _player2Name, int  _numberOfBases, boolean _isTwoPlayer) {
     player1 = new User(_player1Name, 1, _numberOfBases);
     player2 = new User(_player2Name, 2, _numberOfBases);
     isTwoPlayer = _isTwoPlayer;
@@ -98,12 +98,13 @@ public class Game{
     }
     if (allDestroyed == true){
       this.getNonTurnPlayer().setLoser();
+      this.changeTurns();
     }
   }
 
   public void saveVictor(){
     try(Connection con = DB.sql2o.open()){
-      String sql = "INSERT INTO hall_of_fame (name, turns, moment) VALUES (:name, :turns, now())";
+      String sql = "INSERT INTO victors (name, turns, moment) VALUES (:name, :turns, now())";
       con.createQuery(sql)
         .addParameter("name", victor.getName())
         .addParameter("turns", turns)

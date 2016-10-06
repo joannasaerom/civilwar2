@@ -4,6 +4,12 @@
 
 <br>
 
+
 <h3>It took $game.getVictor() $game.getTurns() attacks to decimate the enemy's bases.</h3>
+
+
+#foreach($victor in $hall-of-fame.all())
+  <p>$victor.getName() ||| $victor.getTurns() turns ||| $victor.getMoment()</p>
+#end
 
 <a href="/">Play Again?</a>
