@@ -78,8 +78,8 @@ $(document).ready(function() {
             }
           ]
         });
-
-        map.setOptions({draggable: false, disableDoubleClickZoom: true});
+        map.setOptions({disableDoubleClickZoom: true});
+        // map.setOptions({draggable: false, disableDoubleClickZoom: true});
 
     function States(name, polygon) {
       this.name = name;

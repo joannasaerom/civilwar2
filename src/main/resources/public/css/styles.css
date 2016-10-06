@@ -1,35 +1,97 @@
 body{
   background-color: #0D1723;
-  color: #8C6528;
+  color: #8eccbf;
   font-family: 'Rokkitt', serif;
 }
+label{
+  color: #638e85;
+  margin-right: 10px;
+  font-size: 25px;
+}
 input{
-  color: #0D1723;
+  color: #8eccbf;
+  border: none;
+  border-bottom: 2.5px solid #8eccbf;
+  display: table-cell;
+  width: 250px;
+  background-color: #0D1723;
+  font-size: 25px;
+}
+input:focus {
+  outline: none;
+  background: -webkit-linear-gradient(left top, #8eccbf, white);
+  opacity: 0.4;
+  color: #110F25;
+}
+#player1-add-bases-button, #player2-add-bases-button {
+  float: left;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  margin-right: 5px;
+}
+form{
+  display: table;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 h1{
   font-family: 'Kumar One', cursive;
-  font-size: 6em;
+  font-size: 7em;
   text-align: center;
 }
 #sample {
   margin: 0 auto;
+  border: 2px solid #8eccbf;
+}
+
+.btn-default {
+  background-color: #182534;
+  border: 2px solid #203246;
+  color: #8eccbf;
+  font-size: 20px;
+}
+.btn-default:hover, .btn-default:active, .btn-default:visited {
+  background-color: #283e57;
+  border: 2px solid #203246;
+  color: #8eccbf;
+  outline: none;
 }
 
 .storyLine {
   width: 800px;
   margin: 0 auto;
+  text-align: justify;
+  display: none;
+  margin-top: 20%;
 }
-.btn-default {
-  background-color: #182534;
-  border: 2px solid #203246;
-  color: #8C6528;
+.gameOption {
+  width: 266px;
+  margin: 0 auto;
+  display: none;
 }
-.btn-default:hover, .btn-default:active, .btn-default:visited {
-  background-color: #283e57;
-  border: 2px solid #203246;
-  color: #8C6528;
+.gameOption h3{
+  text-align: center;
+}
+.gameButton{
+  text-align: center;
+}
+.title{
+  margin-top: 20%;
+  font-size: 9em;
 }
 
+.intro{
+  width: 100%;
+  height: 100%;
+}
 #player2-select-screen{
   display: none;
+}
+strong{
+  text-decoration: underline;
+}
+.baseButton{
+  width: 160px;
+  text-align: center;
 }
