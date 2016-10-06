@@ -52,7 +52,6 @@ $(document).ready(function() {
 var alaska = new States("alaska", alaskaPolygon);
     states.push(alaska);
 
-
   //polygon for arkansas
       var arkansasPolygon = new google.maps.Polygon({
         paths: arkansasCoords,
@@ -64,10 +63,7 @@ var alaska = new States("alaska", alaskaPolygon);
       });
   //add arkansas to states array
   var arkansas = new States("arkansas", arkansasPolygon);
-
       states.push(arkansas);
-
-
 
 var alabamaPolygon = new google.maps.Polygon({
   paths: alabamaCoords,
@@ -78,9 +74,7 @@ var alabamaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var alabama = new States("alabama", alabamaPolygon);
-
 states.push(alabama);
-
 
 var arizonaPolygon = new google.maps.Polygon({
   paths: arizonaCoords,
@@ -91,10 +85,7 @@ var arizonaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var arizona = new States("arizona", arizonaPolygon);
-
 states.push(arizona);
-
-
 
 var californiaPolygon = new google.maps.Polygon({
   paths: californiaCoords,
@@ -105,10 +96,7 @@ var californiaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var california = new States("california", californiaPolygon);
-
 states.push(california);
-
-
 
 var coloradoPolygon = new google.maps.Polygon({
   paths: coloradoCoords,
@@ -119,9 +107,7 @@ var coloradoPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var colorado = new States("colorado", coloradoPolygon);
-
 states.push(colorado);
-
 
 var connecticutPolygon = new google.maps.Polygon({
   paths: connecticutCoords,
@@ -132,10 +118,7 @@ var connecticutPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var connecticut = new States("connecticut", connecticutPolygon);
-
 states.push(connecticut);
-
-
 
 var delawarePolygon = new google.maps.Polygon({
   paths: delawareCoords,
@@ -146,10 +129,7 @@ var delawarePolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var delaware = new States("delaware", delawarePolygon);
-
 states.push(delaware);
-
-
 
 var floridaPolygon = new google.maps.Polygon({
   paths: floridaCoords,
@@ -160,10 +140,7 @@ var floridaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var florida = new States("florida", floridaPolygon);
-
 states.push(florida);
-
-
 
 var georgiaPolygon = new google.maps.Polygon({
   paths: georgiaCoords,
@@ -174,10 +151,7 @@ var georgiaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var georgia = new States("georgia", georgiaPolygon);
-
 states.push(georgia);
-
-
 
 var hawaiiPolygon = new google.maps.Polygon({
   paths: hawaiiCoords,
@@ -188,10 +162,7 @@ var hawaiiPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var hawaii = new States("hawaii", hawaiiPolygon);
-
 states.push(hawaii);
-
-
 
 var iowaPolygon = new google.maps.Polygon({
   paths: iowaCoords,
@@ -202,10 +173,7 @@ var iowaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var iowa = new States("iowa", iowaPolygon);
-
 states.push(iowa);
-
-
 
 var idahoPolygon = new google.maps.Polygon({
   paths: idahoCoords,
@@ -216,10 +184,7 @@ var idahoPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var idaho = new States("idaho", idahoPolygon);
-
 states.push(idaho);
-
-
 
 var illinoisPolygon = new google.maps.Polygon({
   paths: illinoisCoords,
@@ -230,11 +195,7 @@ var illinoisPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var illinois = new States("illinois", illinoisPolygon);
-
 states.push(illinois);
-
-
-
 
 var indianaPolygon = new google.maps.Polygon({
   paths: indianaCoords,
@@ -245,9 +206,7 @@ var indianaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var indiana = new States("indiana", indianaPolygon);
-
 states.push(indiana);
-
 
 var kansasPolygon = new google.maps.Polygon({
   paths: kansasCoords,
@@ -258,10 +217,7 @@ var kansasPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var kansas = new States("kansas", kansasPolygon);
-
 states.push(kansas);
-
-
 
 var kentuckyPolygon = new google.maps.Polygon({
   paths: kentuckyCoords,
@@ -272,10 +228,7 @@ var kentuckyPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var kentucky = new States("kentucky", kentuckyPolygon);
-
 states.push(kentucky);
-
-
 
 var louisianaPolygon = new google.maps.Polygon({
   paths: louisianaCoords,
@@ -286,9 +239,7 @@ var louisianaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var louisiana = new States("louisiana", louisianaPolygon);
-
 states.push(louisiana);
-
 
 var massachusettsPolygon = new google.maps.Polygon({
   paths: massachusettsCoords,
@@ -299,9 +250,7 @@ var massachusettsPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var massachusetts = new States("massachusetts", massachusettsPolygon);
-
 states.push(massachusetts);
-
 
 var marylandPolygon = new google.maps.Polygon({
   paths: marylandCoords,
@@ -312,9 +261,7 @@ var marylandPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var maryland = new States("maryland", marylandPolygon);
-
 states.push(maryland);
-
 
 var mainePolygon = new google.maps.Polygon({
   paths: maineCoords,
@@ -325,10 +272,7 @@ var mainePolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var maine = new States("maine", mainePolygon);
-
 states.push(maine);
-
-
 
 var michiganPolygon = new google.maps.Polygon({
   paths: michiganCoords,
@@ -339,10 +283,7 @@ var michiganPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var michigan = new States("michigan", michiganPolygon);
-
 states.push(michigan);
-
-
 
 var minnesotaPolygon = new google.maps.Polygon({
   paths: minnesotaCoords,
@@ -353,9 +294,7 @@ var minnesotaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var minnesota = new States("minnesota", minnesotaPolygon);
-
 states.push(minnesota);
-
 
 var missouriPolygon = new google.maps.Polygon({
   paths: missouriCoords,
@@ -366,10 +305,7 @@ var missouriPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var missouri = new States("missouri", missouriPolygon);
-
 states.push(missouri);
-
-
 
 var mississippiPolygon = new google.maps.Polygon({
   paths: mississippiCoords,
@@ -380,9 +316,7 @@ var mississippiPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var mississippi = new States("mississippi", mississippiPolygon);
-
 states.push(mississippi);
-
 
 var montanaPolygon = new google.maps.Polygon({
   paths: montanaCoords,
@@ -393,10 +327,7 @@ var montanaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var montana = new States("montana", montanaPolygon);
-
 states.push(montana);
-
-
 
 var northcarolinaPolygon = new google.maps.Polygon({
   paths: northcarolinaCoords,
@@ -407,10 +338,7 @@ var northcarolinaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var northcarolina = new States("northcarolina", northcarolinaPolygon);
-
 states.push(northcarolina);
-
-
 
 var northdakotaPolygon = new google.maps.Polygon({
   paths: northdakotaCoords,
@@ -421,10 +349,7 @@ var northdakotaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var northdakota = new States("northdakota", northdakotaPolygon);
-
 states.push(northdakota);
-
-
 
 var nebraskaPolygon = new google.maps.Polygon({
   paths: nebraskaCoords,
@@ -435,9 +360,7 @@ var nebraskaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var nebraska = new States("nebraska", nebraskaPolygon);
-
 states.push(nebraska);
-
 
 var newhampshirePolygon = new google.maps.Polygon({
   paths: newhampshireCoords,
@@ -448,9 +371,7 @@ var newhampshirePolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var newhampshire = new States("newhampshire", newhampshirePolygon);
-
 states.push(newhampshire);
-
 
 var newjerseyPolygon = new google.maps.Polygon({
   paths: newjerseyCoords,
@@ -461,9 +382,7 @@ var newjerseyPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var newjersey = new States("newjersey", newjerseyPolygon);
-
 states.push(newjersey);
-
 
 var newmexicoPolygon = new google.maps.Polygon({
   paths: newmexicoCoords,
@@ -474,10 +393,7 @@ var newmexicoPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var newmexico = new States("newmexico", newmexicoPolygon);
-
 states.push(newmexico);
-
-
 
 var nevadaPolygon = new google.maps.Polygon({
   paths: nevadaCoords,
@@ -488,10 +404,7 @@ var nevadaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var nevada = new States("nevada", nevadaPolygon);
-
 states.push(nevada);
-
-
 
 var newyorkPolygon = new google.maps.Polygon({
   paths: newyorkCoords,
@@ -502,10 +415,7 @@ var newyorkPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var newyork = new States("newyork", newyorkPolygon);
-
 states.push(newyork);
-
-
 
 var ohioPolygon = new google.maps.Polygon({
   paths: ohioCoords,
@@ -516,10 +426,7 @@ var ohioPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var ohio = new States("ohio", ohioPolygon);
-
 states.push(ohio);
-
-
 
 var oklahomaPolygon = new google.maps.Polygon({
   paths: oklahomaCoords,
@@ -530,10 +437,7 @@ var oklahomaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var oklahoma = new States("oklahoma", oklahomaPolygon);
-
 states.push(oklahoma);
-
-
 
 var oregonPolygon = new google.maps.Polygon({
   paths: oregonCoords,
@@ -544,10 +448,7 @@ var oregonPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var oregon = new States("oregon", oregonPolygon);
-
 states.push(oregon);
-
-
 
 var pennsylvaniaPolygon = new google.maps.Polygon({
   paths: pennsylvaniaCoords,
@@ -558,9 +459,7 @@ var pennsylvaniaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var pennsylvania = new States("pennsylvania", pennsylvaniaPolygon);
-
 states.push(pennsylvania);
-
 
 var rhodeislandPolygon = new google.maps.Polygon({
   paths: rhodeislandCoords,
@@ -571,10 +470,7 @@ var rhodeislandPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var rhodeisland = new States("rhodeisland", rhodeislandPolygon);
-
 states.push(rhodeisland);
-
-
 
 var southcarolinaPolygon = new google.maps.Polygon({
   paths: southcarolinaCoords,
@@ -585,10 +481,7 @@ var southcarolinaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var southcarolina = new States("southcarolina", southcarolinaPolygon);
-
 states.push(southcarolina);
-
-
 
 var southdakotaPolygon = new google.maps.Polygon({
   paths: southdakotaCoords,
@@ -598,12 +491,8 @@ var southdakotaPolygon = new google.maps.Polygon({
   fillColor: '#FF0000',
   fillOpacity: 0.35
 });
-
 var southdakota = new States("southdakota", southdakotaPolygon);
-
 states.push(southdakota);
-
-
 
 var tennesseePolygon = new google.maps.Polygon({
   paths: tennesseeCoords,
@@ -614,9 +503,7 @@ var tennesseePolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var tennessee = new States("tennessee", tennesseePolygon);
-
 states.push(tennessee);
-
 
 var texasPolygon = new google.maps.Polygon({
   paths: texasCoords,
@@ -627,9 +514,7 @@ var texasPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var texas = new States("texas", texasPolygon);
-
 states.push(texas);
-
 
 var utahPolygon = new google.maps.Polygon({
   paths: utahCoords,
@@ -640,10 +525,7 @@ var utahPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var utah = new States("utah", utahPolygon);
-
 states.push(utah);
-
-
 
 var virginiaPolygon = new google.maps.Polygon({
   paths: virginiaCoords,
@@ -654,10 +536,7 @@ var virginiaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var virginia = new States("virginia", virginiaPolygon);
-
 states.push(virginia);
-
-
 
 var vermontPolygon = new google.maps.Polygon({
   paths: vermontCoords,
@@ -668,10 +547,7 @@ var vermontPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var vermont = new States("vermont", vermontPolygon);
-
 states.push(vermont);
-
-
 
 var washingtonPolygon = new google.maps.Polygon({
   paths: washingtonCoords,
@@ -682,10 +558,7 @@ var washingtonPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var washington = new States("washington", washingtonPolygon);
-
 states.push(washington);
-
-
 
 var wisconsinPolygon = new google.maps.Polygon({
   paths: wisconsinCoords,
@@ -696,10 +569,7 @@ var wisconsinPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var wisconsin = new States("wisconsin", wisconsinPolygon);
-
 states.push(wisconsin);
-
-
 
 var westvirginiaPolygon = new google.maps.Polygon({
   paths: westvirginiaCoords,
@@ -710,7 +580,6 @@ var westvirginiaPolygon = new google.maps.Polygon({
   fillOpacity: 0.35
 });
 var westvirginia = new States("westvirginia", westvirginiaPolygon);
-
 states.push(westvirginia);
 
 var wyomingPolygon = new google.maps.Polygon({
@@ -757,7 +626,26 @@ var selectedStates = [];
           })
 
 
-
+//function to check if user correctly guessed opponent's base
+          defeatedBase = [];
+          wrongGuess = [];
+          google.maps.event.addListener(selectedStates[i].polygon, 'click', function(event){
+            for (var i = 0; i < selectedStates.length; i++){
+              if(selectedStates[i].polygon.Contains(event.latLng)) {
+                defeatedBase.push(selectedStates[i].name);
+                selectedStates.polygon[i].setMap(null);
+                var index = selectedStates.indexOf(selectedStates[i]);
+                selectedStates.splice(index, 1);
+              }
+              else {
+                for (var j = 0; j < states.length; j++){
+                  if(states[j].polygon.Contains(event.latLng)){
+                    wrongGuess.push(states[j].name);
+                  }
+                }
+              }
+            }
+          })
 
 
 
