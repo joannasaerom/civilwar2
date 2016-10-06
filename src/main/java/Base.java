@@ -8,6 +8,7 @@ public class Base{
   private String location;
   private int playerNum;
   private boolean destroyed;
+
   public Base(String _location, int _playerNum){
     location = _location;
     playerNum = _playerNum;
