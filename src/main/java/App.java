@@ -31,7 +31,6 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-
     post("/select-bases", (request, response) ->{
       Map<String, Object> model = new HashMap<String, Object>();
       String player1Name = request.queryParams("name1");
