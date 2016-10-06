@@ -1,3 +1,5 @@
+var selectedStates = [];
+
 $(document).ready(function() {
     initMap();
   });
@@ -774,21 +776,20 @@ states.push(wyoming);
 
 console.log(states);
 
-var selectedStates = [];
 //event listener to create overlay if user clicks on state
 
 //function to add bases to players
           google.maps.event.addListener(map, 'click', function(event){
             for (var i = 0; i < states.length; i++){
-              if(states[i].polygon.Contains(event.latLng) && selectedStates.length < 5) {
-
+              if(states[i].polygon.Contains(event.latLng)) {
+                if(selectedStates.length < 5){
                     states[i].polygon.setMap(map);
                     selectedStates.push(states[i]);
-
+                }
                     google.maps.event.addListener(states[i].polygon, 'click', function(event){
                       for(var j =0; j < selectedStates.length; j++){
                         if (selectedStates[j].polygon === this){
-                          var index = selectedStates.indexOf(states[j]);
+                          var index = selectedStates.indexOf(selectedStates[j]);
                           selectedStates.splice(index, 1);
                         }
                       }

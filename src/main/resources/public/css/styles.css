@@ -14,6 +14,7 @@ h1{
 #sample {
   margin: 0 auto;
 }
+
 .storyLine {
   width: 800px;
   margin: 0 auto;
@@ -27,4 +28,8 @@ h1{
   background-color: #283e57;
   border: 2px solid #203246;
   color: #8C6528;
+}
+
+#player2-select-screen{
+  display: none;
 }
