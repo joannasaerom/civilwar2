@@ -26,6 +26,10 @@ public class Game{
     return turns + 1;
   }
 
+  public int getTurnsActual(){
+    return turns;
+  }
+
   public User getPlayer1(){
     return player1;
   }
