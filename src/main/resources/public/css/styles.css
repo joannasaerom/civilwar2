@@ -2,6 +2,7 @@ body{
   background-color: #0D1723;
   color: #8eccbf;
   font-family: 'Rokkitt', serif;
+  cursor: crosshair;
 }
 label{
   color: #638e85;
@@ -23,7 +24,7 @@ input:focus {
   opacity: 0.4;
   color: #110F25;
 }
-#player1-add-bases-button, #player2-add-bases-button {
+#player1-add-bases-button, #player2-add-bases-button, #attack-select{
   float: left;
   padding-top: 2.5px;
   padding-bottom: 2.5px;
@@ -269,4 +270,7 @@ strong{
 .subtitle{
   text-align: center;
   font-size: 3em;
+}
+.fixMargin{
+  margin-top: 0px;
 }
