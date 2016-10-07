@@ -1,10 +1,10 @@
-WORLD WAR III in Java
+Civil War 2
 by [Jeremy Fryd, Andy Malkin, Joanna Anderson, Thomas Rivas, and Ryan Vinyard]
 
 version 0.0.1, October 7, 2016
 
 ## Description
-The year is 2089. Humanities ambitions have grown by leaps and bounds, and a rogue AI has gained control of most of the United States' nuclear arsenal. It is up to you, the commander, to fight off the AI threat. One player can play against a computer controlled opponent, or one player can take on the role of the AI.
+The year is 2089. Humanities' ambitions have grown by leaps and bounds, and a rogue AI has gained control of most of the United States' nuclear arsenal. It is up to you, the commander, to fight off the AI threat. One player can play against a computer controlled opponent, or one player can take on the role of the AI.
 
 ### Specifications
 
