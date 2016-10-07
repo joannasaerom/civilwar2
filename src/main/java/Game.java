@@ -23,7 +23,7 @@ public class Game{
   }
 
   public int getTurns(){
-    return turns;
+    return turns + 1;
   }
 
   public User getPlayer1(){
@@ -81,14 +81,23 @@ public class Game{
     // if((this.getPlayerOfTurn().getTargetsMissed().indexOf(_targetLocation) != -1) || (this.getPlayerOfTurn().getTargetsHit().indexOf(_targetLocation) != -1)){
       // throw new IllegalArgumentException("this target has already been chosen");
     // }
+    boolean hit = false;
+    Base baseHit = this.getNonTurnPlayer().getBases().get(0);
+    
     for(Base base : this.getNonTurnPlayer().getBases()){
       if(!_targetLocation.equals(base.getLocation())){
-        this.changeTurns();
-        this.getNonTurnPlayer().addToTargetsMissed(_targetLocation);
+        hit=false;
       } else{
-        base.setDestroyed();
-        this.getNonTurnPlayer().addToTargetsHit(_targetLocation);
+        hit=true;
+        baseHit = base;
       }
+    }
+    if(hit==true){
+      baseHit.setDestroyed();
+      this.getNonTurnPlayer().addToTargetsHit(_targetLocation);
+    } else{
+      this.changeTurns();
+      this.getNonTurnPlayer().addToTargetsMissed(_targetLocation);
     }
     boolean allDestroyed = true;
     for(Base base: this.getNonTurnPlayer().getBases()){

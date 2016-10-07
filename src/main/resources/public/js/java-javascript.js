@@ -41,13 +41,15 @@ $(document).ready(function() {
   });
 
   // attack stage operations
+  // if(previousTargetsHit){
+    previousTargetsHit = $("#previousTargetsHit").val();
+  // }
+  console.log(previousTargetsHit);
 
-  previousTargetsHit = $("#previousTargetsHit").val();
-  // previousTargetsHit = "georgia";
-
-
-  previousTargetsMissed = $("#previousTargetsMissed").val();
-  // previousTargetsMissed = "colorado";
+  // if(previousTargetsMissed){
+    previousTargetsMissed = $("#previousTargetsMissed").val();
+  // }
+  console.log(previousTargetsMissed);
 
   $("#attack-select").click(function(){
     target = "";

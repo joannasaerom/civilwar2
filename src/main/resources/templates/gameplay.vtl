@@ -1,9 +1,19 @@
 <h2>$game.getPlayerOfTurn().getName()'s Turn:</h2>
 <div id = "sample" style = "width:1000px; height:1000px;"></div>
-<form action="/play/$game.getPlayerOfTurn().getName()/$game.getTurns()" method="post">
+<form action="/play/$game.getNonTurnPlayer().getName()/$game.getTurns()" method="post">
 
-  <span id ="previousTargetsHit" value="$game.getPlayerOfTurn().getName()">$game.getPlayerOfTurn().getName()</span>
-  <span id ="previousTargetsMissed" value="$game.getPlayerOfTurn().getName()">$game.getPlayerOfTurn().getTargetsMissed()</span>
+  This player has Hit:$game.getPlayerOfTurn().getTargetsHit()
+  <input id ="previousTargetsHit" value="$game.getPlayerOfTurn().getTargetsHit()" class="hide"></input>
+
+  <br><br>
+
+  This player has Missed:$game.getPlayerOfTurn().getTargetsMissed()
+  <input id ="previousTargetsMissed" value="$game.getPlayerOfTurn().getTargetsMissed()" class="hide"></input>
+
+<br><br>
+
+  <br>Other player Hit:$game.getNonTurnPlayer().getTargetsHit()
+  <br>Other player Missed:$game.getNonTurnPlayer().getTargetsMissed()
 
   <div id="target">
   </div>

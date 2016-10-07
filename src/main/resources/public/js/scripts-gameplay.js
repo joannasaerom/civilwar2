@@ -792,11 +792,10 @@ states.push(wyoming);
           // console.log(unguessedStates);
           // ^^if this works it is genius (albeit redundant)
 
-          console.log(previousTargetsHit);
           console.log(previousTargetsMissed);
           for (var i = 0; i < states.length; i++) {
             for (var j = 0; j < previousTargetsHit.length; j++) {
-              if(states[i].name.indexOf(previousTargetsHit) != -1){
+              if(previousTargetsHit.indexOf(states[i].name) != -1){
                 states[i].polygon.setMap(map);
               }
             }
@@ -804,7 +803,7 @@ states.push(wyoming);
 
           for (var i = 0; i < states.length; i++) {
             for (var j = 0; j < previousTargetsMissed.length; j++) {
-              if(states[i].name.indexOf(previousTargetsMissed) != -1){
+              if(previousTargetsMissed.indexOf(states[i].name) != -1){
                 states[i].polygon.setMap(map);
               }
             }
@@ -816,9 +815,7 @@ states.push(wyoming);
           } else{
             statesGuessedString = (previousTargetsMissed + previousTargetsHit);
           }
-
-          console.log(statesGuessedString);
-
+          
           google.maps.event.addListener(map, 'click', function(event){
             for (var i = 0; i < states.length; i++){
               if(states[i].polygon.Contains(event.latLng)) {
