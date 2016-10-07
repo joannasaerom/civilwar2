@@ -27,7 +27,9 @@ public class HallOfFame{
   public static List<HallOfFame> all(){
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM victors";
-      return con.createQuery(sql).executeAndFetch(HallOfFame.class);
+      return con.createQuery(sql)
+      .throwOnMappingFailure(false)
+      .executeAndFetch(HallOfFame.class);
     }
   }
 
