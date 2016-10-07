@@ -1,8 +1,8 @@
 var selectedStateNames = [];
 var selectedStatesString;
 var target;
-var previousTargetsHit=[];
-var previousTargetsMissed=[];
+var previousTargetsHit;
+var previousTargetsMissed;
 
 $(document).ready(function() {
 
@@ -42,18 +42,19 @@ $(document).ready(function() {
 
   // attack stage operations
 
-  var previousTargetsHitString = $("#previousTargetsHit").val();
-  previousTargetsHit = previousTargetsHitString.split(",");
+  previousTargetsHit = $("#previousTargetsHit").val();
+  // previousTargetsHit = "georgia";
 
-  var previousTargetsMissedString = $("#previousTargetsMissed").val();
-  previousTargetsMissed = previousTargetsMissedString.split(",");
+
+  previousTargetsMissed = $("#previousTargetsMissed").val();
+  // previousTargetsMissed = "colorado";
 
   $("#attack-select").click(function(){
     target = "";
     target = targetState;
     console.log(target);
     $("#target").html("<input name='target' class='hide' value='" + target + "'>");
-    if(target.length > 0) {
+    if(target.length > 1) {
       $("#attack-finalize").removeClass("disable-button");
     }
   });

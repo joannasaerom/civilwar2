@@ -78,16 +78,16 @@ public class Game{
   }
 
   public void attackPlayer(String _targetLocation){
-    if((this.getPlayerOfTurn().getTargetsMissed().indexOf(_targetLocation) != -1) || (this.getPlayerOfTurn().getTargetsHit().indexOf(_targetLocation) != -1)){
-      throw new IllegalArgumentException("this target has already been chosen");
-    }
+    // if((this.getPlayerOfTurn().getTargetsMissed().indexOf(_targetLocation) != -1) || (this.getPlayerOfTurn().getTargetsHit().indexOf(_targetLocation) != -1)){
+      // throw new IllegalArgumentException("this target has already been chosen");
+    // }
     for(Base base : this.getNonTurnPlayer().getBases()){
       if(!_targetLocation.equals(base.getLocation())){
         this.changeTurns();
-        this.getPlayerOfTurn().addToTargetsMissed(_targetLocation);
+        this.getNonTurnPlayer().addToTargetsMissed(_targetLocation);
       } else{
         base.setDestroyed();
-        this.getPlayerOfTurn().addToTargetsHit(_targetLocation);
+        this.getNonTurnPlayer().addToTargetsHit(_targetLocation);
       }
     }
     boolean allDestroyed = true;

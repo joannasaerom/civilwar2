@@ -2,8 +2,8 @@
 <div id = "sample" style = "width:1000px; height:1000px;"></div>
 <form action="/play/$game.getPlayerOfTurn().getName()/$game.getTurns()" method="post">
 
-  <span id ="previousTargetsHit" value="$game.getPlayerOfTurn().getTargetsHit()"></span>
-  <span id ="previousTargetsMissed" value="$game.getPlayerOfTurn().getTargetsMissed()"></span>
+  <span id ="previousTargetsHit" value="$game.getPlayerOfTurn().getName()">$game.getPlayerOfTurn().getName()</span>
+  <span id ="previousTargetsMissed" value="$game.getPlayerOfTurn().getName()">$game.getPlayerOfTurn().getTargetsMissed()</span>
 
   <div id="target">
   </div>
