@@ -45,12 +45,20 @@ h1{
   border: 2px solid #8eccbf;
 }
 
+.btn-default1 {
+  background-color: #182534;
+  border: 2px solid #203246;
+  color: #8eccbf;
+  font-size: 20px;
+}
+
 .btn-default {
   background-color: #182534;
   border: 2px solid #203246;
   color: #8eccbf;
   font-size: 20px;
 }
+
 .btn-default:hover, .btn-default:active, .btn-default:visited {
   background-color: #283e57;
   border: 2px solid #203246;
@@ -101,4 +109,19 @@ strong{
   opacity: 0.65;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+.pick-five-states-1, .pick-five-states-2{
+  color: white;
+  font size: 3em;
+}
+
+.initial-hide{
+  display: none;
+}
+
+.coming-soon:hover{
+  .initial-hide{
+    display:block;
+    }
 }

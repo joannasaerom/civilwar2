@@ -19,8 +19,11 @@ $(document).ready(function() {
       console.log(selectedStatesString);
       $("#player1-put-bases-for-java").html("<input name='player1-bases' class='hide' value='" + selectedStatesString + "'>");
     }
-    if (selectedStatesString.length>0) {
+    var count = (selectedStatesString.match(/,/g) || []).length;
+    if (count===4) {
       $("#player1-button").removeClass("disable-button");
+    } else{
+      $("#select-five-states-1").text("YOU MUST SELECT FIVE STATES");
     }
   });
 
@@ -35,8 +38,11 @@ $(document).ready(function() {
       console.log(selectedStatesString);
       $("#player2-put-bases-for-java").html("<input name='player2-bases' class='hide' value='" + selectedStatesString + "'>");
     }
-    if (selectedStatesString.length>0) {
+    var count = (selectedStatesString.match(/,/g) || []).length;
+    if (count===4) {
       $("#player2-button").removeClass("disable-button");
+    } else{
+      $("#select-five-states-2").text("YOU MUST SELECT FIVE STATES");
     }
   });
 
