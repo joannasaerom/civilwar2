@@ -65,11 +65,9 @@ public class Game{
   public void changeTurns(){
     if (player1.isLoser() == true){
       victor = player2;
-      this.saveVictor();
       gameOver = true;
     } else if (player2.isLoser() == true){
       victor = player1;
-      this.saveVictor();
       gameOver = true;
     }
     if(gameOver == false){
@@ -83,10 +81,9 @@ public class Game{
     // }
     boolean hit = false;
     Base baseHit = this.getNonTurnPlayer().getBases().get(0);
-    
+
     for(Base base : this.getNonTurnPlayer().getBases()){
       if(!_targetLocation.equals(base.getLocation())){
-        hit=false;
       } else{
         hit=true;
         baseHit = base;
@@ -94,10 +91,10 @@ public class Game{
     }
     if(hit==true){
       baseHit.setDestroyed();
-      this.getNonTurnPlayer().addToTargetsHit(_targetLocation);
+      this.getPlayerOfTurn().addToTargetsHit(_targetLocation);
     } else{
+      this.getPlayerOfTurn().addToTargetsMissed(_targetLocation);
       this.changeTurns();
-      this.getNonTurnPlayer().addToTargetsMissed(_targetLocation);
     }
     boolean allDestroyed = true;
     for(Base base: this.getNonTurnPlayer().getBases()){

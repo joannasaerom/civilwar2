@@ -69,12 +69,13 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Game game = request.session().attribute("game");
       String target = request.queryParams("target");
-      game.attackPlayer(target);
+      if(target.length()>1){
+        game.attackPlayer(target);
+      }
       request.session().attribute("game", game);
       model.put("game", game);
       if (game.isGameOver()==true){
         game.saveVictor();
-        model.put("hall-of-fame", HallOfFame.class);
         model.put("hall-of-fame", HallOfFame.all());
         model.put("template", "templates/game-over.vtl");
       } else{

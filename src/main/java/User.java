@@ -52,7 +52,7 @@ public class User{
     if(targetsHit.equals("")){
       this.targetsHit += _targetHit;
     } else{
-      this.targetsHit += (", " + _targetHit);
+      this.targetsHit += ("," + _targetHit);
     }
   }
 
@@ -60,7 +60,7 @@ public class User{
     if(targetsMissed.equals("")){
       this.targetsMissed += _targetMissed;
     } else{
-      this.targetsMissed += (", " + _targetMissed);
+      this.targetsMissed += ("," + _targetMissed);
     }
   }
 
