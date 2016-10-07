@@ -81,6 +81,7 @@ public class Game{
     // }
     boolean hit = false;
     Base baseHit = this.getNonTurnPlayer().getBases().get(0);
+    boolean allDestroyed = false;
 
     for(Base base : this.getNonTurnPlayer().getBases()){
       if(!_targetLocation.equals(base.getLocation())){
@@ -92,16 +93,16 @@ public class Game{
     if(hit==true){
       baseHit.setDestroyed();
       this.getPlayerOfTurn().addToTargetsHit(_targetLocation);
+      allDestroyed = true;
     } else{
       this.getPlayerOfTurn().addToTargetsMissed(_targetLocation);
       this.changeTurns();
     }
-    boolean allDestroyed = true;
-    for(Base base: this.getNonTurnPlayer().getBases()){
-      if(base.isDestroyed() == false){
-        allDestroyed = false;
-      }
-    }
+    // for(Base base: this.getNonTurnPlayer().getBases()){
+    //   if(base.isDestroyed() == false){
+    //     allDestroyed = false;
+    //   }
+    // }
     if (allDestroyed == true){
       this.getNonTurnPlayer().setLoser();
       this.changeTurns();

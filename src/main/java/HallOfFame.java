@@ -7,6 +7,7 @@ import java.text.DateFormat;
 
 public class HallOfFame{
 
+  private int id;
   private String name;
   private int turns;
   private Timestamp moment;
