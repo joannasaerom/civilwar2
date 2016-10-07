@@ -1,5 +1,5 @@
 var selectedStates = [];
-var targetState="t";
+var targetState="";
 
 $(document).ready(function() {
     initMap();
@@ -775,42 +775,46 @@ var wyomingPolygon = new google.maps.Polygon({
 var wyoming = new States("wyoming", wyomingPolygon);
 states.push(wyoming);
 
-          var unguessedStates = states.slice(0);
-
-          for (var i = 0; i < states.length; i++) {
-            var index = i;
-            var spliced = 0;
-            for (var j = 0; j < previousTargetsHit.length; j++) {
-              for(var k = 0; k < previousTargetsMissed.length; k++){
-                if(states[i]===previousTargetsHit[j] || states[i]===previousTargetsMissed[k]){
-                  unguessedStates.splice(i+spliced, 1);
-                  spliced++;
-                }
-              }
-            }
-          }
-          console.log(unguessedStates);
+          // var unguessedStates = states.slice(0);
+          //
+          // for (var i = 0; i < states.length; i++) {
+          //   var index = i;
+          //   var spliced = 0;
+          //   for (var j = 0; j < previousTargetsHit.length; j++) {
+          //     for(var k = 0; k < previousTargetsMissed.length; k++){
+          //       if(states[i].name===previousTargetsHit[j] || states[i].name===previousTargetsMissed[k]){
+          //         unguessedStates.splice(i+spliced, 1);
+          //         spliced++;
+          //       }
+          //     }
+          //   }
+          // }
+          // console.log(unguessedStates);
           // ^^if this works it is genius (albeit redundant)
 
-
+          console.log(previousTargetsHit);
           for (var i = 0; i < states.length; i++) {
             for (var j = 0; j < previousTargetsHit.length; j++) {
-              if(states[i]===previousTargetsHit[j]){
+              if(previousTargetsHit.indexOf(states[i].name) != -1){
                 states[i].polygon.setMap(map);
               }
             }
           }
-
+          console.log(previousTargetsMissed);
           for (var i = 0; i < states.length; i++) {
             for (var j = 0; j < previousTargetsMissed.length; j++) {
-              if(states[i]===previousTargetsMissed[j]){
+              if(previousTargetsMissed.indexOf(states[i].name) != -1){
                 states[i].polygon.setMap(map);
               }
             }
           }
 
-          var statesGuessedString = (previousTargetsMissed.join(",") + "," + previousTargetsHit.join(""));
-          console.log(statesGuessedString);
+          var statesGuessedString;
+          if (previousTargetsHit.length>0){
+            statesGuessedString = (previousTargetsMissed + "," + previousTargetsHit);
+          } else{
+            statesGuessedString = (previousTargetsMissed + previousTargetsHit);
+          }
 
           google.maps.event.addListener(map, 'click', function(event){
             for (var i = 0; i < states.length; i++){
@@ -822,10 +826,11 @@ states.push(wyoming);
                     targetState = states[i].name;
                   }
                   google.maps.event.addListener(states[i].polygon, 'click', function(event){
-                    targetState = "t";
                     for(var k =0; k < states.length; k++){
                       if (states[k].polygon === this){
+                        targetState = "";
                         states[k].polygon.setMap(null);
+                        $("#attack-finalize").addClass("disable-button");
                       }
                     }
                   });

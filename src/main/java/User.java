@@ -50,17 +50,17 @@ public class User{
 
   public void addToTargetsHit(String _targetHit){
     if(targetsHit.equals("")){
-      targetsHit += _targetHit;
+      this.targetsHit += _targetHit;
     } else{
-      targetsHit += (", " + _targetHit);
+      this.targetsHit += ("," + _targetHit);
     }
   }
 
   public void addToTargetsMissed(String _targetMissed){
     if(targetsMissed.equals("")){
-      targetsMissed += _targetMissed;
+      this.targetsMissed += _targetMissed;
     } else{
-      targetsMissed += (", " + _targetMissed);
+      this.targetsMissed += ("," + _targetMissed);
     }
   }
 

@@ -1,8 +1,8 @@
 var selectedStateNames = [];
 var selectedStatesString;
 var target;
-var previousTargetsHit=[];
-var previousTargetsMissed=[];
+var previousTargetsHit;
+var previousTargetsMissed;
 
 $(document).ready(function() {
 
@@ -41,19 +41,22 @@ $(document).ready(function() {
   });
 
   // attack stage operations
+  // if(previousTargetsHit){
+    previousTargetsHit = $("#previousTargetsHit").val();
+  // }
+  console.log(previousTargetsHit);
 
-  var previousTargetsHitString = $("#previousTargetsHit").val();
-  previousTargetsHit = previousTargetsHitString.split(",");
-
-  var previousTargetsMissedString = $("#previousTargetsMissed").val();
-  previousTargetsMissed = previousTargetsMissedString.split(",");
+  // if(previousTargetsMissed){
+    previousTargetsMissed = $("#previousTargetsMissed").val();
+  // }
+  console.log(previousTargetsMissed);
 
   $("#attack-select").click(function(){
     target = "";
     target = targetState;
     console.log(target);
     $("#target").html("<input name='target' class='hide' value='" + target + "'>");
-    if(target.length > 0) {
+    if(target.length > 1) {
       $("#attack-finalize").removeClass("disable-button");
     }
   });

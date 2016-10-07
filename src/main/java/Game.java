@@ -23,7 +23,7 @@ public class Game{
   }
 
   public int getTurns(){
-    return turns;
+    return turns + 1;
   }
 
   public User getPlayer1(){
@@ -65,11 +65,9 @@ public class Game{
   public void changeTurns(){
     if (player1.isLoser() == true){
       victor = player2;
-      this.saveVictor();
       gameOver = true;
     } else if (player2.isLoser() == true){
       victor = player1;
-      this.saveVictor();
       gameOver = true;
     }
     if(gameOver == false){
@@ -78,17 +76,25 @@ public class Game{
   }
 
   public void attackPlayer(String _targetLocation){
-    if((this.getPlayerOfTurn().getTargetsMissed().indexOf(_targetLocation) != -1) || (this.getPlayerOfTurn().getTargetsHit().indexOf(_targetLocation) != -1)){
-      throw new IllegalArgumentException("this target has already been chosen");
-    }
+    // if((this.getPlayerOfTurn().getTargetsMissed().indexOf(_targetLocation) != -1) || (this.getPlayerOfTurn().getTargetsHit().indexOf(_targetLocation) != -1)){
+      // throw new IllegalArgumentException("this target has already been chosen");
+    // }
+    boolean hit = false;
+    Base baseHit = this.getNonTurnPlayer().getBases().get(0);
+
     for(Base base : this.getNonTurnPlayer().getBases()){
       if(!_targetLocation.equals(base.getLocation())){
-        this.changeTurns();
-        this.getPlayerOfTurn().addToTargetsMissed(_targetLocation);
       } else{
-        base.setDestroyed();
-        this.getPlayerOfTurn().addToTargetsHit(_targetLocation);
+        hit=true;
+        baseHit = base;
       }
+    }
+    if(hit==true){
+      baseHit.setDestroyed();
+      this.getPlayerOfTurn().addToTargetsHit(_targetLocation);
+    } else{
+      this.getPlayerOfTurn().addToTargetsMissed(_targetLocation);
+      this.changeTurns();
     }
     boolean allDestroyed = true;
     for(Base base: this.getNonTurnPlayer().getBases()){
