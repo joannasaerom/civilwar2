@@ -51,6 +51,7 @@ $(document).ready(function() {
   $("#attack-select").click(function(){
     target = "";
     target = targetState;
+    console.log(target);
     $("#target").html("<input name='target' class='hide' value='" + target + "'>");
     if(target.length > 0) {
       $("#attack-finalize").removeClass("disable-button");
