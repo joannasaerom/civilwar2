@@ -1,22 +1,21 @@
 
 <h2>$game.getPlayerOfTurn().getName()'s Turn:</h2>
 
-<div id = "sample" style = "width:1000px; height:1000px;"></div>
+<div id = "sample" style = "width:900px; height:600px;"></div>
 <form action="/play/$game.getNonTurnPlayer().getName()/$game.getTurns()" method="post">
 
-
-  This player has Hit:$game.getPlayerOfTurn().getTargetsHit()
+  <h3 class="fixMargin">You captured the following military bases: $game.getPlayerOfTurn().getTargetsHit()</h3>
   <input id ="previousTargetsHit" value="$game.getPlayerOfTurn().getTargetsHit()" class="hide"></input>
 
-  <br><br>
 
-  This player has Missed:$game.getPlayerOfTurn().getTargetsMissed()
+
+  <h3>You attacked these states and <strong>missed</strong>: $game.getPlayerOfTurn().getTargetsMissed()</h3>
   <input id ="previousTargetsMissed" value="$game.getPlayerOfTurn().getTargetsMissed()" class="hide"></input>
 
-<br><br>
+<br>
 
-  <br>Other player has Hit:$game.getNonTurnPlayer().getTargetsHit()
-  <br>Other player has Missed:$game.getNonTurnPlayer().getTargetsMissed()
+  <h3>Enemy's hits: $game.getNonTurnPlayer().getTargetsHit()</h3>
+  <h3>Enemy's misses: $game.getNonTurnPlayer().getTargetsMissed()</h3>
 
   <div id="target">
   </div>
