@@ -1,15 +1,23 @@
-<h1>GAME OVER</h1>
-<h3>$game.getVictor().getName() conquers all.</h3>
+
+<h1 class="glitch2" data-text="GAME OVER">GAME OVER</h1>
+<div class="winner">
+  <a href="/">Play Again?</a>
+  <h3 class="winner widthFix">$game.getVictor().getName() conquers all.</h3>
+  <h3 class="winner">It took $game.getVictor().getName() $game.getTurnsActual() turns to decimate the enemy's bases.</h3>
 
 
-<br>
-
-
-<h3>It took $game.getVictor().getName() $game.getTurnsActual() turns to decimate the enemy's bases.</h3>
-
-
+<h3 class="winner">Scoreboard</h3>
+<table style="width: 100%">
+<tr>
+  <th>Name</th>
+  <th>Turns</th>
+  <th>Date</th>
+</tr>
 #foreach($victor in $hall-of-fame)
-  <p>$victor.getName() ||| $victor.getTurns() turns ||| $victor.getMoment()</p>
+  <tr>
+    <th>$victor.getName() </th>
+    <th>$victor.getTurns() turns </th>
+    <th>$victor.getMoment()</th>
+  </tr>
 #end
-
-<a href="/">Play Again?</a>
+</table>
