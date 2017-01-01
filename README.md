@@ -17,27 +17,12 @@ This project is an iteration of the game "Battleship" in which the board is a ch
 * if a highlighted state is clicked, it is unhighlighted and unselected
 * players choose one base per turn to attack, switching to the other players turn if they miss
 * a history of former misses are highlighted on the map during a players turn, these states are un-clickable and will not unhighlight
-* once one player hits another's pre-selected base, the game is sent to a game over screen with a list of past winners and an option to replay
-* winning player's name, turn count to victory, and time of victory are added to the hall_of_fame database
-
+* once one player hits another's pre-selected base, the game is sent to a game over screen
 
 ### Setup
 
 * clone repository
 * [install gradle](https://gradle.org/gradle-download/?_ga=1.156561343.568755268.1470681169) for building the program
-* [install postgres](https://www.postgresql.org/) for database integration
-* run postgres:`postgres`
-* run psql:`psql`
-* In the psql window, run the following commands:
-
-`CREATE DATABASE hall_of_fame;`
-
-`\c hall_of_fame`
-
-`CREATE TABLE victors (id serial PRIMARY KEY, name varchar, turns int, moment timestamp);`
-
-`CREATE DATABASE hall_of_fame_test WITH TEMPLATE hall_of_fame;`
-
 * run  `gradle test` to ensure reliability
 * launch program with `gradle run` and visit your local server at http://localhost:4567/
 
