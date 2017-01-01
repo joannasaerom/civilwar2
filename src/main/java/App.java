@@ -75,8 +75,8 @@ public class App {
       request.session().attribute("game", game);
       model.put("game", game);
       if (game.isGameOver()==true){
-        game.saveVictor();
-        model.put("hall-of-fame", HallOfFame.all());
+        // game.saveVictor();
+        // model.put("hall-of-fame", HallOfFame.all());
         model.put("template", "templates/game-over.vtl");
       } else{
         model.put("template", "templates/gameplay.vtl");

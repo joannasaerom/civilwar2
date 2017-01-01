@@ -113,14 +113,14 @@ public class Game{
     }
   }
 
-  public void saveVictor(){
-    try(Connection con = DB.sql2o.open()){
-      String sql = "INSERT INTO victors (name, turns, moment) VALUES (:name, :turns, now())";
-      con.createQuery(sql)
-        .addParameter("name", victor.getName())
-        .addParameter("turns", turns)
-        .executeUpdate();
-    }
-  }
+  // public void saveVictor(){
+  //   try(Connection con = DB.sql2o.open()){
+  //     String sql = "INSERT INTO victors (name, turns, moment) VALUES (:name, :turns, now())";
+  //     con.createQuery(sql)
+  //       .addParameter("name", victor.getName())
+  //       .addParameter("turns", turns)
+  //       .executeUpdate();
+  //   }
+  // }
 
 }

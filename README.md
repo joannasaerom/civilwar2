@@ -5,7 +5,6 @@
 
 This project is an iteration of the game "Battleship" in which the board is a chosen section of Google Maps. As of now, available "bases" are states of the US, and players win by hitting just one of the five pre-selected by their local opponent ('Two-Player Sudden Death').
 
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Base Selection Page](Screenshots/select_bases.png?raw=true "Base Selection Page")
 
 

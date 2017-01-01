@@ -24,13 +24,13 @@ public class HallOfFame{
     return DateFormat.getDateTimeInstance().format(this.moment).toString();
   }
 
-  public static List<HallOfFame> all(){
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM victors";
-      return con.createQuery(sql)
-      .throwOnMappingFailure(false)
-      .executeAndFetch(HallOfFame.class);
-    }
-  }
+  // public static List<HallOfFame> all(){
+  //   try(Connection con = DB.sql2o.open()) {
+  //     String sql = "SELECT * FROM victors";
+  //     return con.createQuery(sql)
+  //     .throwOnMappingFailure(false)
+  //     .executeAndFetch(HallOfFame.class);
+  //   }
+  // }
 
 }
