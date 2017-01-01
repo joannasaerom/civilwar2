@@ -6,6 +6,9 @@
 This project is an iteration of the game "Battleship" in which the board is a chosen section of Google Maps. As of now, available "bases" are states of the US, and players win by hitting just one of the five pre-selected by their local opponent ('Two-Player Sudden Death').
 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Base Selection Page](Screenshots/select_bases.png?raw=true "Base Selection Page")
+
+
 ### Functionality
 
 * program welcomes users with a title screen where they can choose to play in one or two-player mode (only the latter currently available)
@@ -29,8 +32,11 @@ This project is an iteration of the game "Battleship" in which the board is a ch
 * In the psql window, run the following commands:
 
 `CREATE DATABASE hall_of_fame;`
+
 `\c hall_of_fame`
+
 `CREATE TABLE victors (id serial PRIMARY KEY, name varchar, turns int, moment timestamp);`
+
 `CREATE DATABASE hall_of_fame_test WITH TEMPLATE hall_of_fame;`
 
 * run  `gradle test` to ensure reliability
