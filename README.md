@@ -29,8 +29,11 @@ This project is an iteration of the game "Battleship" in which the board is a ch
 * In the psql window, run the following commands:
 
 `CREATE DATABASE hall_of_fame;`
+
 `\c hall_of_fame`
+
 `CREATE TABLE victors (id serial PRIMARY KEY, name varchar, turns int, moment timestamp);`
+
 `CREATE DATABASE hall_of_fame_test WITH TEMPLATE hall_of_fame;`
 
 * run  `gradle test` to ensure reliability
