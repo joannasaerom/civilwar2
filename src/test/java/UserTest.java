@@ -42,10 +42,10 @@ public class UserTest {
   User obama = new User("Barrack", 1, 5);
   obama.addToTargetsHit("Iran");
   obama.addToTargetsHit("Cuba");
-  assertEquals("Iran, Cuba", obama.getTargetsHit());
+  assertEquals("Iran,Cuba", obama.getTargetsHit());
   obama.addToTargetsMissed("Libya");
   obama.addToTargetsMissed("Saudi Arabia");
-  assertEquals("Libya, Saudi Arabia", obama.getTargetsMissed());
+  assertEquals("Libya,Saudi Arabia", obama.getTargetsMissed());
   }
 
 

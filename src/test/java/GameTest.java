@@ -18,7 +18,7 @@ public class GameTest {
   @Test
   public void getters_worksProperly(){
     Game testGame = new Game("Kakarot", "Vegeta", 5, true);
-    assertEquals(1, testGame.getTurns());
+    assertEquals(1+1, testGame.getTurns());
     assertEquals(testGame.getPlayer1(), testGame.getPlayerOfTurn());
     assertEquals(testGame.getPlayer2(), testGame.getNonTurnPlayer());
     assertEquals(testGame.isGameOver(), false);
@@ -30,7 +30,7 @@ public class GameTest {
     Game testGame = new Game("Kakarot", "Vegeta", 5, true);
     testGame.changeTurns();
     assertEquals(testGame.isGameOver(), false);
-    assertEquals(2, testGame.getTurns());
+    assertEquals(2+1, testGame.getTurns());
     testGame.getPlayer1().setLoser();
     testGame.changeTurns();
     assertEquals(testGame.isGameOver(), true);
