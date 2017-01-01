@@ -3,9 +3,9 @@
 <div class="winner">
   <a href="/">Play Again?</a>
   <h3 class="winner widthFix">$game.getVictor().getName() conquers all.</h3>
+</div>
 
-
-
+<!--
 <h3 class="winner">Scoreboard</h3>
 <table style="width: 100%">
 <tr>
@@ -13,11 +13,11 @@
   <th>Turns</th>
   <th>Date</th>
 </tr>
-#foreach($victor in $hall-of-fame)
-  <tr>
-    <th>$victor.getName() </th>
-    <th>$victor.getTurns() turns </th>
-    <th>$victor.getMoment()</th>
-  </tr>
-#end
-</table>
+## #foreach($victor in $hall-of-fame)
+##   <tr>
+##     <th>$victor.getName() </th>
+##     <th>$victor.getTurns() turns </th>
+##     <th>$victor.getMoment()</th>
+##   </tr>
+## #end
+</table> -->
